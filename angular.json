@@ -46,9 +46,7 @@
               "projects/game-of-thrones-app/src/favicon.ico",
               "projects/game-of-thrones-app/src/assets"
             ],
-            "styles": [
-              "projects/game-of-thrones-app/src/styles.scss"
-            ],
+            "styles": ["projects/game-of-thrones-app/src/styles.scss"],
             "scripts": []
           },
           "configurations": {
@@ -100,23 +98,6 @@
             "browserTarget": "game-of-thrones-app:build"
           }
         },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "projects/game-of-thrones-app/src/test.ts",
-            "polyfills": "projects/game-of-thrones-app/src/polyfills.ts",
-            "tsConfig": "projects/game-of-thrones-app/tsconfig.spec.json",
-            "karmaConfig": "projects/game-of-thrones-app/karma.conf.js",
-            "assets": [
-              "projects/game-of-thrones-app/src/favicon.ico",
-              "projects/game-of-thrones-app/src/assets"
-            ],
-            "styles": [
-              "projects/game-of-thrones-app/src/styles.scss"
-            ],
-            "scripts": []
-          }
-        },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
@@ -125,24 +106,11 @@
               "projects/game-of-thrones-app/tsconfig.spec.json",
               "projects/game-of-thrones-app/e2e/tsconfig.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
-        },
-        "e2e": {
-          "builder": "@angular-devkit/build-angular:protractor",
-          "options": {
-            "protractorConfig": "projects/game-of-thrones-app/e2e/protractor.conf.js",
-            "devServerTarget": "game-of-thrones-app:serve"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "game-of-thrones-app:serve:production"
-            }
+            "exclude": ["**/node_modules/**"]
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "game-of-thrones-app"
 }
