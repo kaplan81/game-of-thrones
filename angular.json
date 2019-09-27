@@ -40,11 +40,19 @@
             "index": "projects/game-of-thrones-app/src/index.html",
             "main": "projects/game-of-thrones-app/src/main.ts",
             "polyfills": "projects/game-of-thrones-app/src/polyfills.ts",
+            "stylePreprocessorOptions": {
+              "includePaths": ["projects/game-of-thrones-app/src/scss"]
+            },
             "tsConfig": "projects/game-of-thrones-app/tsconfig.app.json",
             "aot": true,
             "assets": [
               "projects/game-of-thrones-app/src/favicon.ico",
-              "projects/game-of-thrones-app/src/assets"
+              "projects/game-of-thrones-app/src/assets",
+              {
+                "glob": "config.json",
+                "input": "projects/game-of-thrones-app",
+                "output": "/"
+              }
             ],
             "styles": ["projects/game-of-thrones-app/src/styles.scss"],
             "scripts": []
