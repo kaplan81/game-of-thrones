@@ -111,8 +111,7 @@
           "options": {
             "tsConfig": [
               "projects/game-of-thrones-app/tsconfig.app.json",
-              "projects/game-of-thrones-app/tsconfig.spec.json",
-              "projects/game-of-thrones-app/e2e/tsconfig.json"
+              "projects/game-of-thrones-app/tsconfig.spec.json"
             ],
             "exclude": ["**/node_modules/**"]
           }
