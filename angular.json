@@ -109,10 +109,7 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "projects/game-of-thrones-app/tsconfig.app.json",
-              "projects/game-of-thrones-app/tsconfig.spec.json"
-            ],
+            "tsConfig": ["projects/game-of-thrones-app/tsconfig.app.json"],
             "exclude": ["**/node_modules/**"]
           }
         }
