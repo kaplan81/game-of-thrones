@@ -3,7 +3,7 @@
     "base": "http://localhost:1981"
   },
   "api": {
-    "base": "https://www.anapioficeandfire.com",
+    "base": "https://www.anapioficeandfire.com/api",
     "paths": {
       "features": {
         "books": "books",
