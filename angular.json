@@ -114,6 +114,28 @@
           }
         }
       }
+    },
+    "got-ng-kit": {
+      "projectType": "library",
+      "root": "projects/@got/ng-kit",
+      "sourceRoot": "projects/@got/ng-kit/src",
+      "prefix": "got",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/@got/ng-kit/tsconfig.lib.json",
+            "project": "projects/@got/ng-kit/ng-package.json"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["projects/@got/ng-kit/tsconfig.lib.json"],
+            "exclude": ["**/node_modules/**"]
+          }
+        }
+      }
     }
   },
   "defaultProject": "ice-fire-song"

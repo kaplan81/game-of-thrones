@@ -22,8 +22,9 @@
       "@ice-fire-song-houses/*": ["./projects/ice-fire-song/src/app/houses/*"],
       "@ice-fire-song-assets/*": ["./projects/ice-fire-song/src/assets/*"],
       "@ice-fire-song-environments/*": ["./projects/ice-fire-song/src/environments/*"],
-      "@got/ng-kit": ["dist/@got/ng-kit"],
-      "@got/test-kit": ["dist/@got/test-kit"]
+      "@got/ng-kit": ["dist/@got/ng-kit", "dist/got/ng-kit"],
+      "@got/test-kit": ["dist/@got/test-kit"],
+      "@got/ng-kit/*": ["dist/got/ng-kit/*"]
     }
   },
   "angularCompilerOptions": {
