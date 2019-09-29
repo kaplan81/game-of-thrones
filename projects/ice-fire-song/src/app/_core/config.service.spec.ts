@@ -1,37 +1,27 @@
-/* tslint:disable:no-unused-variable */
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 import { ConfigFileService } from '@got/ng-kit';
 import * as fromCoreModels from '@ice-fire-song-core/config.model';
 import { ConfigService } from '@ice-fire-song-core/config.service';
-import { of } from 'rxjs';
+import { Observable, of } from 'rxjs';
+import * as configFile from '../../../config.json';
 
-const configFileMock: fromCoreModels.ConfigFile = {
-  api: {
-    base: 'https://www.anapioficeandfire.com',
-    paths: {
-      features: {
-        books: 'books',
-        characters: 'characters',
-        houses: 'houses'
-      }
-    }
-  },
-  app: {
-    base: 'http://localhost:1981'
+const configFileMock = configFile as fromCoreModels.ConfigFile;
+
+export class ConfigFileServiceMock extends ConfigFileService<fromCoreModels.ConfigFile> {
+  configFile(): Observable<fromCoreModels.ConfigFile> {
+    return of(configFileMock);
   }
-};
-
-const configFileServiceMock = jest.fn<ConfigFileService>(() => ({
-  configFile: jest.fn(() => of(configFileMock))
-}));
+}
 
 describe('ConfigService', () => {
   let configService: ConfigService;
-  let fileService: ConfigFileService;
+  let fileService: ConfigFileService<fromCoreModels.ConfigFile>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [{ provide: ConfigFileService, useClass: configFileServiceMock }]
+      imports: [HttpClientTestingModule],
+      providers: [{ provide: ConfigFileService, useClass: ConfigFileServiceMock }]
     });
     configService = TestBed.get(ConfigService);
     fileService = TestBed.get(ConfigFileService);
@@ -47,10 +37,8 @@ describe('ConfigService', () => {
     }
     fileService.configs = await appInitializer();
 
-    expect(configService.app).toEqual(fileService.configs.app);
+    expect(configService.appBase).toEqual(fileService.configs.app.base);
     expect(configService.apiBase).toEqual(fileService.configs.api.base);
     expect(configService.apiPathFeatures).toEqual(fileService.configs.api.paths.features);
-    expect(configService.apiPathSegments).toEqual(fileService.configs.api.paths.segments);
-    expect(configService.apiPathEndpoints).toEqual(fileService.configs.api.paths.endpoints);
   });
 });

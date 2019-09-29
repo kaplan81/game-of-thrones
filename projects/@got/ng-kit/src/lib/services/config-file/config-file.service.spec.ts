@@ -9,7 +9,7 @@ import * as configFile from './config-file.spec.json';
 describe('ConfigFileService', () => {
   let httpClient: HttpClient;
   let httpTestingController: HttpTestingController;
-  let configFileService: ConfigFileService;
+  let configFileService: ConfigFileService<any>;
   let url: string;
 
   beforeEach(() => {

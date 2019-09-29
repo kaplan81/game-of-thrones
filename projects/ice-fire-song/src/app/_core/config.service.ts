@@ -7,29 +7,21 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ConfigService {
-  constructor(private configFileService: ConfigFileService) {}
+  constructor(private configFileService: ConfigFileService<fromCoreModels.ConfigFile>) {}
 
   loadConfig(): Observable<fromCoreModels.ConfigFile> {
-    return this.configFileService.configFile<fromCoreModels.ConfigFile>();
+    return this.configFileService.configFile();
   }
 
-  get app(): fromCoreModels.ConfigApp {
-    return this.configFileService.configs.app;
+  get appBase(): string {
+    return (this.configFileService.configs as fromCoreModels.ConfigFile).app.base;
   }
 
   get apiBase(): string {
-    return this.configFileService.configs.api.base;
+    return (this.configFileService.configs as fromCoreModels.ConfigFile).api.base;
   }
 
-  get apiPathFeatures(): fromCoreModels.FeaturePaths {
-    return this.configFileService.configs.api.paths.features;
-  }
-
-  get apiPathSegments(): fromCoreModels.SegmentPaths {
-    return this.configFileService.configs.api.paths.segments;
-  }
-
-  get apiPathEndpoints(): fromCoreModels.EndpointPaths {
-    return this.configFileService.configs.api.paths.endpoints;
+  get apiPathFeatures(): fromCoreModels.FeaturePath {
+    return (this.configFileService.configs as fromCoreModels.ConfigFile).api.paths.features;
   }
 }

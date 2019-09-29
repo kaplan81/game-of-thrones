@@ -14,7 +14,7 @@ export const configFileparams = new HttpParams()
 @Injectable({
   providedIn: 'root'
 })
-export class ConfigFileService {
+export class ConfigFileService<T> {
   get configs(): any {
     return this._configs;
   }
@@ -25,7 +25,7 @@ export class ConfigFileService {
 
   constructor(private errorService: ErrorService, private http: HttpClient) {}
 
-  configFile<T>(): Observable<T> {
+  configFile(): Observable<T> {
     return this.http.get<T>('config.json', { params: configFileparams }).pipe(
       tap((configFile: T) => (this.configs = configFile)),
       take(1),
