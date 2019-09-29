@@ -1,0 +1,8 @@
+{
+  "app": {
+    "base": "http://localhost:1981"
+  },
+  "api": {
+    "base": "https://api-url.com"
+  }
+}
