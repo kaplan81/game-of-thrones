@@ -13,6 +13,7 @@
     "target": "es2015",
     "typeRoots": ["node_modules/@types"],
     "lib": ["es2018", "dom"],
+    "resolveJsonModule": true,
     "paths": {
       "@ice-fire-song-core/*": ["./projects/ice-fire-song/src/app/_core/*"],
       "@ice-fire-song-shared/*": ["./projects/ice-fire-song/src/app/_shared/*"],
@@ -22,9 +23,8 @@
       "@ice-fire-song-houses/*": ["./projects/ice-fire-song/src/app/houses/*"],
       "@ice-fire-song-assets/*": ["./projects/ice-fire-song/src/assets/*"],
       "@ice-fire-song-environments/*": ["./projects/ice-fire-song/src/environments/*"],
-      "@got/ng-kit": ["dist/@got/ng-kit", "dist/got/ng-kit"],
-      "@got/test-kit": ["dist/@got/test-kit"],
-      "@got/ng-kit/*": ["dist/got/ng-kit/*"]
+      "@got/ng-kit": ["dist/@got/ng-kit"],
+      "@got/test-kit": ["dist/@got/test-kit"]
     }
   },
   "angularCompilerOptions": {
