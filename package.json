@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --port 1981",
     "build": "ng build",
     "test": "jest --passWithNoTests",
     "lint": "ng lint",
@@ -29,7 +29,23 @@
           "<rootDir>/node_modules/jest-preset-angular/InlineHtmlStripStylesTransformer"
         ]
       }
-    }
+    },
+    "moduleNameMapper": {
+      "@ice-fire-song-core/(.*)": "<rootDir>/projects/ice-fire-song/src/app/_core/$1",
+      "@ice-fire-song-shared/(.*)": "<rootDir>/projects/ice-fire-song/src/app/_shared/$1",
+      "@ice-fire-song-app/(.*)": "<rootDir>/projects/ice-fire-song/src/app/app/$1",
+      "@ice-fire-song-books/(.*)": "<rootDir>/projects/ice-fire-song/src/app/books/$1",
+      "@ice-fire-song-characters/(.*)": "<rootDir>/projects/ice-fire-song/src/app/characters/$1",
+      "@ice-fire-song-houses/(.*)": "<rootDir>/projects/ice-fire-song/src/app/houses/$1",
+      "@ice-fire-song-assets/(.*)": "<rootDir>/projects/ice-fire-song/src/assets/$1",
+      "@ice-fire-song-environments/(.*)": "<rootDir>/projects/ice-fire-song/src/environments/$1",
+      "^@got/ng-kit$": "<rootDir>/dist/@got/ng-kit",
+      "^@got/test-kit$": "<rootDir>/dist/@got/test-kit"
+    },
+    "modulePathIgnorePatterns": [
+      "<rootDir>/projects/@got/ng-kit/package.json",
+      "<rootDir>/projects/@got/test-kit/package.json"
+    ]
   },
   "dependencies": {
     "@angular/animations": "~8.2.7",

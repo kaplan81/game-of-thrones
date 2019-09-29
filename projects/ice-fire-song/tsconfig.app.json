@@ -1,0 +1,24 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "outDir": "../../out-tsc/app",
+    "paths": {
+      "@ice-fire-song-core/*": ["./src/app/_core/*"],
+      "@ice-fire-song-shared/*": ["./src/app/_shared/*"],
+      "@ice-fire-song-app/*": ["./src/app/app/*"],
+      "@ice-fire-song-books/*": ["./src/app/books/*"],
+      "@ice-fire-song-characters/*": ["./src/app/characters/*"],
+      "@ice-fire-song-houses/*": ["./src/app/houses/*"],
+      "@ice-fire-song-assets/*": ["./src/assets/*"],
+      "@ice-fire-song-environments/*": ["./src/environments/*"],
+      "@got/ng-kit": ["../../dist/@got/ng-kit"],
+      "@got/test-kit": ["../../dist/@got/test-kit"]
+    }
+  },
+  "files": ["src/main.ts", "src/polyfills.ts"],
+  "include": ["src/**/*.d.ts"],
+  "angularCompilerOptions": {
+    "enableIvy": true
+  }
+}

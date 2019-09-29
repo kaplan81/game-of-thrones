@@ -11,13 +11,20 @@
     "moduleResolution": "node",
     "importHelpers": true,
     "target": "es2015",
-    "typeRoots": [
-      "node_modules/@types"
-    ],
-    "lib": [
-      "es2018",
-      "dom"
-    ]
+    "typeRoots": ["node_modules/@types"],
+    "lib": ["es2018", "dom"],
+    "paths": {
+      "@ice-fire-song-core/*": ["./projects/ice-fire-song/src/app/_core/*"],
+      "@ice-fire-song-shared/*": ["./projects/ice-fire-song/src/app/_shared/*"],
+      "@ice-fire-song-app/*": ["./projects/ice-fire-song/src/app/app/*"],
+      "@ice-fire-song-books/*": ["./projects/ice-fire-song/src/app/books/*"],
+      "@ice-fire-song-characters/*": ["./projects/ice-fire-song/src/app/characters/*"],
+      "@ice-fire-song-houses/*": ["./projects/ice-fire-song/src/app/houses/*"],
+      "@ice-fire-song-assets/*": ["./projects/ice-fire-song/src/assets/*"],
+      "@ice-fire-song-environments/*": ["./projects/ice-fire-song/src/environments/*"],
+      "@got/ng-kit": ["dist/@got/ng-kit"],
+      "@got/test-kit": ["dist/@got/test-kit"]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
