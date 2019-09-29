@@ -1,5 +1,4 @@
 import { APP_INITIALIZER, NgModule, Optional, SkipSelf } from '@angular/core';
-import { ConfigFileModule, ErrorModule, RouterEventsModule } from '@got/ng-kit';
 import { ConfigService } from '@ice-fire-song-core/config.service';
 
 export function appInitializerFactory(configService: ConfigService): Function {
@@ -16,13 +15,12 @@ export function appInitializerFactory(configService: ConfigService): Function {
 @NgModule({
   providers: [
     {
-      provide: APP_INITIALIZER,
-      useFactory: appInitializerFactory,
       deps: [ConfigService],
-      multi: true
+      multi: true,
+      provide: APP_INITIALIZER,
+      useFactory: appInitializerFactory
     }
-  ],
-  imports: [ConfigFileModule, ErrorModule, RouterEventsModule]
+  ]
 })
 export class CoreModule {
   constructor(
