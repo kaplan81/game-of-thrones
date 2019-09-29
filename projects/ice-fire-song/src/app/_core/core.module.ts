@@ -1,7 +1,10 @@
 import { APP_INITIALIZER, NgModule, Optional, SkipSelf } from '@angular/core';
+import * as fromCoreModels from '@ice-fire-song-core/config.model';
 import { ConfigService } from '@ice-fire-song-core/config.service';
 
-export function appInitializerFactory(configService: ConfigService): Function {
+export function appInitializerFactory(
+  configService: ConfigService
+): () => Promise<fromCoreModels.ConfigFile> {
   return () => configService.loadConfig().toPromise();
 }
 
