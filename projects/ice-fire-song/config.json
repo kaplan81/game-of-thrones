@@ -1,0 +1,15 @@
+{
+  "app": {
+    "base": "http://localhost:1981"
+  },
+  "api": {
+    "base": "https://www.anapioficeandfire.com",
+    "paths": {
+      "features": {
+        "books": "books",
+        "characters": "characters",
+        "houses": "houses"
+      }
+    }
+  }
+}

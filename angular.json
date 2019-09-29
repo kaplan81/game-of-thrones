@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "game-of-thrones-app": {
+    "ice-fire-song": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -29,40 +29,40 @@
           "skipTests": true
         }
       },
-      "root": "projects/game-of-thrones-app",
-      "sourceRoot": "projects/game-of-thrones-app/src",
-      "prefix": "got",
+      "root": "projects/ice-fire-song",
+      "sourceRoot": "projects/ice-fire-song/src",
+      "prefix": "ifs",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/game-of-thrones-app",
-            "index": "projects/game-of-thrones-app/src/index.html",
-            "main": "projects/game-of-thrones-app/src/main.ts",
-            "polyfills": "projects/game-of-thrones-app/src/polyfills.ts",
+            "outputPath": "dist/ice-fire-song",
+            "index": "projects/ice-fire-song/src/index.html",
+            "main": "projects/ice-fire-song/src/main.ts",
+            "polyfills": "projects/ice-fire-song/src/polyfills.ts",
             "stylePreprocessorOptions": {
-              "includePaths": ["projects/game-of-thrones-app/src/scss"]
+              "includePaths": ["projects/ice-fire-song/src/scss"]
             },
-            "tsConfig": "projects/game-of-thrones-app/tsconfig.app.json",
+            "tsConfig": "projects/ice-fire-song/tsconfig.app.json",
             "aot": true,
             "assets": [
-              "projects/game-of-thrones-app/src/favicon.ico",
-              "projects/game-of-thrones-app/src/assets",
+              "projects/ice-fire-song/src/favicon.ico",
+              "projects/ice-fire-song/src/assets",
               {
                 "glob": "config.json",
-                "input": "projects/game-of-thrones-app",
+                "input": "projects/ice-fire-song",
                 "output": "/"
               }
             ],
-            "styles": ["projects/game-of-thrones-app/src/styles.scss"],
+            "styles": ["projects/ice-fire-song/src/styles.scss"],
             "scripts": []
           },
           "configurations": {
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "projects/game-of-thrones-app/src/environments/environment.ts",
-                  "with": "projects/game-of-thrones-app/src/environments/environment.prod.ts"
+                  "replace": "projects/ice-fire-song/src/environments/environment.ts",
+                  "with": "projects/ice-fire-song/src/environments/environment.prod.ts"
                 }
               ],
               "optimization": true,
@@ -92,29 +92,29 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "game-of-thrones-app:build"
+            "browserTarget": "ice-fire-song:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "game-of-thrones-app:build:production"
+              "browserTarget": "ice-fire-song:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "game-of-thrones-app:build"
+            "browserTarget": "ice-fire-song:build"
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["projects/game-of-thrones-app/tsconfig.app.json"],
+            "tsConfig": ["projects/ice-fire-song/tsconfig.app.json"],
             "exclude": ["**/node_modules/**"]
           }
         }
       }
     }
   },
-  "defaultProject": "game-of-thrones-app"
+  "defaultProject": "ice-fire-song"
 }

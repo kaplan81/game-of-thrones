@@ -5,35 +5,15 @@
   $primary-darker: deep-map-get($theme, 'primary', 'darker') !global;
   $primary-lighter: deep-map-get($theme, 'primary', 'lighter') !global;
   $primary-text: deep-map-get($theme, 'text', 'primary', 'main') !global;
-  $primary-text-darker: deep-map-get(
-    $theme,
-    'text',
-    'primary',
-    'darker'
-  ) !global;
-  $primary-text-lighter: deep-map-get(
-    $theme,
-    'text',
-    'primary',
-    'lighter'
-  ) !global;
+  $primary-text-darker: deep-map-get($theme, 'text', 'primary', 'darker') !global;
+  $primary-text-lighter: deep-map-get($theme, 'text', 'primary', 'lighter') !global;
   @if map-has-key($theme, secondary) {
     $secondary: deep-map-get($theme, 'secondary', 'main') !global;
     $secondary-darker: deep-map-get($theme, 'secondary', 'darker') !global;
     $secondary-lighter: deep-map-get($theme, 'secondary', 'lighter') !global;
     $secondary-text: deep-map-get($theme, 'text', 'secondary', 'main') !global;
-    $secondary-text-darker: deep-map-get(
-      $theme,
-      'text',
-      'secondary',
-      'darker'
-    ) !global;
-    $secondary-text-lighter: deep-map-get(
-      $theme,
-      'text',
-      'secondary',
-      'lighter'
-    ) !global;
+    $secondary-text-darker: deep-map-get($theme, 'text', 'secondary', 'darker') !global;
+    $secondary-text-lighter: deep-map-get($theme, 'text', 'secondary', 'lighter') !global;
   } @else {
     $secondary: null !global;
     $secondary-darker: null !global;
