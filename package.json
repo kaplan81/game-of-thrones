@@ -5,9 +5,15 @@
     "ng": "ng",
     "start": "ng serve --port 1981",
     "build": "ng build",
-    "test": "jest --passWithNoTests",
+    "build-ice-fire-song": "npm run test-ice-fire-song & ng build ice-fire-song --prod",
+    "build-ng-kit": "npm run test-ng-kit & ng build ng-kit",
+    "build-ng-kit:w": "npm run test-ng-kit:w & ng build ng-kit --watch",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "test": "jest -u --passWithNoTests",
+    "test-ice-fire-song": "jest projects/ice-fire-song/src/app/** -u",
+    "test-ice-fire-song:w": "jest projects/ice-fire-song/src/app/** -u --watch",
+    "test-ng-kit": "jest projects/@got/ng-kit/src/** -u",
+    "test-ng-kit:w": "jest projects/@got/ng-kit/src/** -u --watch"
   },
   "private": true,
   "husky": {

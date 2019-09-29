@@ -115,7 +115,7 @@
         }
       }
     },
-    "got-ng-kit": {
+    "ng-kit": {
       "projectType": "library",
       "root": "projects/@got/ng-kit",
       "sourceRoot": "projects/@got/ng-kit/src",
