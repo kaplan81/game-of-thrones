@@ -19,4 +19,17 @@ body {
   .bold {
     font-weight: bold;
   }
+  .list-item-circle {
+    list-style-type: circle;
+  }
+  .nav-btn {
+    font-size: $rem;
+    padding: $gap $space;
+    border-radius: 5px;
+    background-color: $secondary;
+    color: $primary-text;
+    &:hover {
+      cursor: pointer;
+    }
+  }
 }

@@ -1,7 +1,7 @@
 <ifs-loading *ngIf="!house"></ifs-loading>
 
 <ng-container *ngIf="house">
-  <h2 class="ifs-house-ui__attribute house-name">{{ house.name }}</h2>
+  <h2 class="ifs-house-ui__attribute heading">{{ house.name }}</h2>
   <div class="ifs-house-ui__attribute"><span class="bold">Region:</span> {{ house.region }}</div>
   <div class="ifs-house-ui__attribute" *ngIf="isNonEmptyAttribute(house.coatOfArms)">
     <span class="bold">Coat of arms:</span> {{ house.coatOfArms }}
@@ -9,20 +9,20 @@
   <div class="ifs-house-ui__attribute" *ngIf="isNonEmptyAttribute(house.words)">
     <span class="bold">Words:</span> {{ house.words }}
   </div>
-  <div class="ifs-house-ui__attribute" *ngIf="isNonEmptyAttribute(house.titles)">
+  <div class="ifs-house-ui__attribute listed" *ngIf="isNonEmptyAttribute(house.titles)">
     <span class="bold">Titles:</span>
-    <ul *ngFor="let title of house.titles">
-      <li>{{ title }}</li>
+    <ul>
+      <li class="list-item-circle" *ngFor="let title of house.titles">{{ title }}</li>
     </ul>
   </div>
-  <div class="ifs-house-ui__attribute" *ngIf="isNonEmptyAttribute(house.seats)">
+  <div class="ifs-house-ui__attribute listed" *ngIf="isNonEmptyAttribute(house.seats)">
     <span class="bold">Seats:</span>
-    <ul *ngFor="let seat of house.seats">
-      <li>{{ seat }}</li>
+    <ul>
+      <li class="list-item-circle" *ngFor="let seat of house.seats">{{ seat }}</li>
     </ul>
   </div>
   <div class="ifs-house-ui__attribute" *ngIf="isNonEmptyAttribute(house.currentLord)">
-    <span class="bold">Current lord:</span> {{ house.currentLord }}
+    <span class="bold">Current lord (character API URL):</span> {{ house.currentLord }}
   </div>
   <div class="ifs-house-ui__attribute" *ngIf="isNonEmptyAttribute(house.heir)">
     <span class="bold">Heir:</span> {{ house.heir }}
@@ -31,27 +31,37 @@
     <span class="bold">Founded:</span> {{ house.founded }}
   </div>
   <div class="ifs-house-ui__attribute" *ngIf="isNonEmptyAttribute(house.founder)">
-    <span class="bold">Founder:</span> {{ house.founder }}
+    <span class="bold">Founder (character API URL):</span> {{ house.founder }}
   </div>
   <div class="ifs-house-ui__attribute" *ngIf="isNonEmptyAttribute(house.diedOut)">
     <span class="bold">Died out:</span> {{ house.diedOut }}
   </div>
-  <div class="ifs-house-ui__attribute" *ngIf="isNonEmptyAttribute(house.ancestralWeapons)">
+  <div class="ifs-house-ui__attribute listed" *ngIf="isNonEmptyAttribute(house.ancestralWeapons)">
     <span class="bold">Ancestral weapons:</span>
-    <ul *ngFor="let ancestralWeapon of house.ancestralWeapons">
-      <li>{{ ancestralWeapon }}</li>
+    <ul>
+      <li class="list-item-circle" *ngFor="let ancestralWeapon of house.ancestralWeapons">
+        {{ ancestralWeapon }}
+      </li>
     </ul>
   </div>
-  <div class="ifs-house-ui__attribute" *ngIf="isNonEmptyAttribute(house.cadetBranches)">
+  <div class="ifs-house-ui__attribute listed" *ngIf="isNonEmptyAttribute(house.cadetBranches)">
     <span class="bold">Cadet branches:</span>
-    <ul *ngFor="let cadetBranch of house.cadetBranches">
-      <li>{{ cadetBranch }}</li>
+    <ul>
+      <li class="list-item-circle" *ngFor="let cadetBranch of house.cadetBranches">
+        {{ cadetBranch }}
+      </li>
     </ul>
   </div>
-  <div class="ifs-house-ui__attribute" *ngIf="isNonEmptyAttribute(house.swornMembers)">
-    <span class="bold">Sworn members:</span>
-    <ul *ngFor="let swornMember of house.swornMembers">
-      <li>{{ swornMember }}</li>
+  <div class="ifs-house-ui__attribute listed" *ngIf="isNonEmptyAttribute(house.swornMembers)">
+    <span class="bold">Sworn members (character API URLs):</span>
+    <ul>
+      <li class="list-item-circle" *ngFor="let swornMember of house.swornMembers">
+        {{ swornMember }}
+      </li>
     </ul>
   </div>
+
+  <br />
+
+  <button type="button" class="nav-btn" routerLink="/houses">Back to Houses</button>
 </ng-container>

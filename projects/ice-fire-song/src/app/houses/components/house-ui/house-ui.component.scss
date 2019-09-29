@@ -5,4 +5,9 @@
   &.house-name {
     margin-bottom: $space;
   }
+  &.listed {
+    ul {
+      margin: $gap $space;
+    }
+  }
 }
