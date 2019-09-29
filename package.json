@@ -4,6 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --port 1981",
+    "postinstall": "npm run build-ng-kit",
     "build": "npm run build-ng-kit && npm run build-ice-fire-song",
     "build-ice-fire-song": "npm run test-ice-fire-song & ng build ice-fire-song --prod",
     "build-ng-kit": "npm run test-ng-kit & ng build ng-kit",
