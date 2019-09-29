@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import * as fromHousesModels from '@ice-fire-song-houses/models';
 import { HousesService } from '@ice-fire-song-houses/services/houses.service';
 import { Observable } from 'rxjs';
 
@@ -8,7 +9,7 @@ import { Observable } from 'rxjs';
   templateUrl: './houses.component.html'
 })
 export class HousesComponent implements OnInit {
-  houses$: Observable<any>;
+  houses$: Observable<fromHousesModels.House[]>;
 
   constructor(private housesService: HousesService) {}
 

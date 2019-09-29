@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { ErrorService } from '@got/ng-kit';
 import { ApiFeature } from '@ice-fire-song-core/config.model';
 import { ConfigService } from '@ice-fire-song-core/config.service';
+import * as fromHousesModels from '@ice-fire-song-houses/models';
 import { Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
@@ -24,13 +25,13 @@ export class HousesService {
     this._housesUrl = `${this.configService.apiBase}/${this._housesPath}`;
   }
 
-  getHouse(houseId: number): Observable<any> {
+  getHouse(houseId: number): Observable<fromHousesModels.House> {
     const url = `${this._housesUrl}/${houseId}`;
 
     return this.http.get<any>(url).pipe(catchError(this.errorService.handleHttpError('getHouse')));
   }
 
-  getHouses(): Observable<any> {
+  getHouses(): Observable<fromHousesModels.House[]> {
     return this.http
       .get<any>(this._housesUrl)
       .pipe(catchError(this.errorService.handleHttpError('getHouses')));
