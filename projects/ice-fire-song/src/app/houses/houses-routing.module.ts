@@ -9,13 +9,11 @@ export const housesPath: fromRootEnums.RouteFeatureET = fromRootEnums.RouteFeatu
 const routes: Routes = [
   {
     component: fromHousesContainers.HousesComponent,
-    path: fromRootEnums.RouteCommons.empty,
-    children: [
-      // {
-      //   path: 'houses/:houseId',
-      //   component: HouseComponent
-      // }
-    ]
+    path: fromRootEnums.RouteCommons.empty
+  },
+  {
+    component: fromHousesContainers.HouseComponent,
+    path: ':houseId'
   }
 ];
 

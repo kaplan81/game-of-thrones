@@ -1,7 +1,7 @@
 <ifs-loading *ngIf="!houses"></ifs-loading>
 
-<ul *ngIf="houses">
+<ul class="ifs-houses-ui__list" *ngIf="houses">
   <li *ngFor="let house of houses">
-    {{ house.name }} from {{ house.region }}
+    <a (click)="navigateToHouse(house.url)">{{ house.name }} from {{ house.region }}</a>
   </li>
 </ul>

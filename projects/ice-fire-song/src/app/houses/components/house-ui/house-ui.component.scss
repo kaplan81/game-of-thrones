@@ -1,0 +1,8 @@
+@import 'global';
+
+.ifs-house-ui__attribute {
+  padding: $gap 0;
+  &.house-name {
+    margin-bottom: $space;
+  }
+}

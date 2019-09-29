@@ -1,0 +1,11 @@
+@import 'global';
+
+.ifs-houses-ui__list {
+  margin-top: $space;
+  li {
+    padding: $gap 0;
+    a {
+      text-decoration: underline;
+    }
+  }
+}
