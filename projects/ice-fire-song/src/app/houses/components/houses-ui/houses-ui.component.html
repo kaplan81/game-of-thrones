@@ -1,0 +1,7 @@
+<ifs-loading *ngIf="!houses"></ifs-loading>
+
+<ul *ngIf="houses">
+  <li *ngFor="let house of houses">
+    {{ house.name }} from {{ house.region }}
+  </li>
+</ul>
